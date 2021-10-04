@@ -1,73 +1,101 @@
 const init = () => {
-fetch('http://hp-api.herokuapp.com/api/characters/')
-    .then(resp => resp.json())
-    .then(data => renderHouseMenu(data))
+
     
 fetch('http://hp-api.herokuapp.com/api/characters/house/gryffindor')
     .then(resp => resp.json())
-    .then(data => autoGryffindor(data))
+    .then(data => renderHouseMembers(data))
 
 fetch('http://hp-api.herokuapp.com/api/characters/')
     .then(resp => resp.json())
-    .then(data => autoHarry(data))  
+    .then(data => renderCharacterInfo(data[0]))  
+
+document.getElementById('Gryffindor').addEventListener('click', () => {
+    fetch(`http://hp-api.herokuapp.com/api/characters/house/gryffindor`) 
+    .then(resp => resp.json())
+    .then(data => renderHouseMembers(data))
+
+    
+})
+
+document.getElementById('Hufflepuff').addEventListener('click', () => {
+    fetch(`http://hp-api.herokuapp.com/api/characters/house/hufflepuff`) 
+    .then(resp => resp.json())
+    .then(data => renderHouseMembers(data))
+
+    
+})
+
+document.getElementById('Ravenclaw').addEventListener('click', () => {
+    fetch(`http://hp-api.herokuapp.com/api/characters/house/ravenclaw`) 
+    .then(resp => resp.json())
+    .then(data => renderHouseMembers(data))
+
+    
+})
+
+document.getElementById('Slytherin').addEventListener('click', () => {
+    fetch(`http://hp-api.herokuapp.com/api/characters/house/Slytherin`) 
+    .then(resp => resp.json())
+    .then(data => renderHouseMembers(data))
+
+    
+})
 }
 
 
-function renderHouseMenu(houseArray){
-        const houseList = document.getElementById('house-list');
-        houseList.replaceChildren();
-        houseArray.forEach(character => {
-            const li = document.createElement('li');
-            li.textContent = character.house;
-            li.addEventListener('click', () => { 
-                autoGryffindor(character);
-            })
-            houseList.appendChild(li);
-        })
-    }
 
-function autoGryffindor(characterArray) {
+
+
+function renderHouseMembers(characterArray) {
     const characterList = document.getElementById('member-list')
     characterList.replaceChildren();
     characterArray.forEach(character => {
         const characterLi = document.createElement('li')
         characterLi.textContent = character.name;
         characterLi.addEventListener('click', () => {
-            autoHarry(character);
+            renderCharacterInfo(character);
         })
         characterList.appendChild(characterLi)
     })
 }
 
-// function autoHarry(detailArray) {
-//     const detailList = document.getElementById('member-info')
-//     detailList.replaceChildren();
-//     detailArray.forEach(member => {
-//         const memberName = document.getElementById('member-name')
-//         const memberImage = document.getElementById('member-image')
-//         const memberSpecies = document.getElementById('member-species')
-//         const memberGender = document.getElementById('member-gender')
-//         const memberHouse = document.getElementById('member-house')
-//         const memberDob = document.getElementById('member-dob')
-//         const memberAncestry = document.getElementById('member-ancestry')
-//         const memberEyes = document.getElementById('member-eyes')
-//         const memberHair = document.getElementById('member-hair')
-//         const memberWand = document.getElementById('member-wand')
-//         const wandWood = document.getElementById('wand-wood')
-//         const wandCore = document.getElementById('wand-core')
-//         const wandLength = document.getElementById('wand-length')
-//         const memberPatronus = document.getElementById('member-patronus')
-//         const memberStudent = document.getElementById('member-student')
-//         const memberActor = document.getElementById('member-actor')
-//         const memberAlive = document.getElementById('member-alive')
-//         memberName.textContent = member.name
-//         memberImage.src = member.memberImage
-//         memberImage.alt = member.name
-//         memberSpecies.textContent = member.species
-//         memberGender.textContent = member.memberGender
-//         detailList.appendChild(memberName, memberImage, memberSpecies)
 
-//     })
-// }
+function renderCharacterInfo(character) {
+    const memberName = document.getElementById('member-name')
+    const memberImage = document.getElementById('member-image')
+    const memberSpecies = document.getElementById('member-species')
+    const memberGender = document.getElementById('member-gender')
+    const memberHouse = document.getElementById('member-house')
+    const memberDob = document.getElementById('member-dob')
+    const memberAncestry = document.getElementById('member-ancestry')
+    const memberEyes = document.getElementById('member-eyes')
+    const memberHair = document.getElementById('member-hair')
+    const wandWood = document.getElementById('wand-wood')
+    const wandCore = document.getElementById('wand-core')
+    const wandLength = document.getElementById('wand-length')
+    const memberPatronus = document.getElementById('member-patronus')
+    const memberStudent = document.getElementById('member-student')
+    const memberStaff = document.getElementById('member-staff')
+    const memberActor = document.getElementById('member-actor')
+    const memberAlive = document.getElementById('member-alive')
+    memberName.textContent = "Name:   " + character.name;
+    memberImage.src = character.image;
+    memberSpecies.textContent = "Species:   " + character.species;
+    memberGender.textContent = "Gender:   " + character.gender;
+    memberHouse.textContent = "House:   " + character.house;
+    memberDob.textContent = "Date Of Birth:   " + character.dateOfBirth;
+    memberAncestry.textContent = "Ancestry:   " + character.ancestry;
+    memberEyes.textContent = "Eye Color:   " + character.eyeColour;
+    memberHair.textContent = "Hair Color:   " + character.hairColour;
+    wandWood.textContent = "Wood:   " + character.wand.wood;
+    wandCore.textContent = "Core:   " + character.wand.core;
+    wandLength.textContent = "Length:   " + character.wand.length;
+    memberPatronus.textContent = "Patronus:   " + character.patronus;
+    memberStudent.textContent = "Student:   " + character.hogswartsStudent;
+    memberStaff.textContent = "Staff:   " + character.hogswartsStaff;
+    memberActor.textContent = "Actor:   " + character.actor;
+    memberAlive.textContent = "Alive:   " + character.alive;
+}
+
 
 document.addEventListener("DOMContentLoaded", init)
