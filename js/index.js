@@ -80,6 +80,7 @@ function renderCharacterInfo(character) {
     const memberAlive = document.getElementById('member-alive')
     memberName.textContent = "Name:   " + character.name;
     memberImage.src = character.image;
+    memberImage.alt = "No Image Available"
     memberSpecies.textContent = "Species:   " + character.species;
     memberGender.textContent = "Gender:   " + character.gender;
     memberHouse.textContent = "House:   " + character.house;
@@ -91,8 +92,6 @@ function renderCharacterInfo(character) {
     wandCore.textContent = "Core:   " + character.wand.core;
     wandLength.textContent = "Length:   " + character.wand.length;
     memberPatronus.textContent = "Patronus:   " + character.patronus;
-    memberStudent.textContent = "Student:   " + character.hogswartsStudent;
-    memberStaff.textContent = "Staff:   " + character.hogswartsStaff;
     memberActor.textContent = "Actor:   " + character.actor;
     memberAlive.textContent = "Alive:   " + character.alive;
 }
