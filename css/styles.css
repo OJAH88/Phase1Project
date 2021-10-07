@@ -1,24 +1,41 @@
 html,body{margin:0;padding:0}
-body{font: 85% arial,sans-serif;text-align:center}
-p{margin:0 10px 10px}
+body{font-family: "Oswald", Helvetica Neue;text-align:center;text-transform: capitalize; background-color: #EEBA30;}
+p{margin:0 10px 10px; }
 a{padding:5px; text-decoration:none; }
 div#header{background-color:#EEBA30;}
-div#header h1{height:80px;line-height:80px;margin:0;padding-left:10px;color:AE0001}
+div#header h1{height:80px;line-height:90px;margin:0;padding-left:10px;color:#740001; text-align: center;}
+div#header{font-family: 'Harry Potter', sans-serif;}
 div#container{text-align:left}
 div#content p{line-height:1.4}
+div#content {background-color: #740001;}
+div#content h2{font-family: 'Harry Potter', sans-serif; text-align: center; color: #EEBA30;}
 div#content p{text-color:#740001}
 div#content ul li:hover{background-color:#EEBA30; color:#740001}
+div#content ul li{color:#EEBA30}
+div#content img{border-radius: 50%; border: 15px solid #EEBA30;
+  
+    padding: 5px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   }
 div#navigation{background:#740001;}
+
+div#navigation h2{font-family: 'Harry Potter', sans-serif; color:#EEBA30;text-align: center}
 div#navigation ul li:hover{background-color:#EEBA30; color:#740001}
 div#navigation ul{margin:15px 0; padding:3px; list-style-type:none; color: #eeBA30;}
 div#navigation li{margin-bottom:5px; color:#eeBA30}
 div#navigation p{text-color:#eeBA30}
-div#extra{background:#eeBA30; text-color:#740001}
+div#extra{background:#740001; text-color:#eeBA30}
+div#extra h2{font-family: 'Harry Potter', sans-serif;text-align: center; color: #EEBA30;}
 div#extra ul li:hover{background-color:#740001; color:#eeba30}
+div#extra ul li{color: #EEBA30;}
 div#footer{background:#eeBA30;}
 div#footer p{margin:0;padding:5px 10px}
 div#container{width: 95%;;margin:0 auto}
 div#content{float:left;width:66%}
 div#navigation{float:right;width:33%}
 div#extra{float:right;clear:right;width:33%}
-div#footer{clear:both;width:100%}
+div#footer{clear:both;width:100%;}
+

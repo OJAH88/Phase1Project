@@ -3,8 +3,10 @@
     
 <title>Group Project</title>
 <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<link href="http://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <script defer type="text/javascript" src="js/index.js"></script>
+
 </head>
 <body>
 
@@ -17,7 +19,7 @@
      
     
       <div id="member-info">
-        <p><strong>Member Info</strong></p>
+        <h2><strong>Member Info</strong></h2>
         <ul>
           <li id="member-name">Name:</li>
           <li id="member-species">Species:</li>
@@ -36,23 +38,22 @@
           <li id="member-patronus">Patronus:</li>
           <li id="member-alive">Alive:</li>
           <li id="member-actor">Actor:</li>
-          <img id="member-image" src = "placeholder.jpeg" height=250px>
+          <img id="member-image" src = "placeholder.jpeg" height=400px onerror="this.src='missing.png';">
           </li>
         </ul>
       </div>
     </div>
   </div>
   <div id="navigation">
-    <p><strong>Choose Your House</strong></p>
-    <ul id="house-list">
-      <li id="Gryffindor">Gryffindor</li>
-      <li id="Hufflepuff">Hufflepuff</li>
-      <li id="Ravenclaw">Ravenclaw</li>
-      <li id="Slytherin">Slytherin</li>
-    </ul>
+    <h2><strong>Choose Your House</strong></h2>
+      <img src = "gryffindor.png" height=120px id="Gryffindor" class="center">
+      <img src = "hufflepuff.png" height=120px id="Hufflepuff" class="center">
+      <img src = "ravenclaw.png" height=120px id="Ravenclaw" class="center">
+      <img src = "slytherin.png" height=120px id="Slytherin" class="center">
+   
   </div>
   <div id="extra">
-    <p><strong>Members</strong></p>
+    <h2><strong>Members of <div id="houseplaceholder">Gryffindor</div></strong></h2>
     <ul id="member-list">
       <li>Fake Member</li>
       <li>Fake Member</li>

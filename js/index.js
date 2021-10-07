@@ -9,15 +9,23 @@ fetch('http://hp-api.herokuapp.com/api/characters/')
     .then(resp => resp.json())
     .then(data => renderCharacterInfo(data[0]))  
 
+
 document.getElementById('Gryffindor').addEventListener('click', () => {
+    let housePlaceholder = document.getElementById('houseplaceholder')
+    housePlaceholder.textContent = "Gryffindor"
+
     fetch(`http://hp-api.herokuapp.com/api/characters/house/gryffindor`) 
     .then(resp => resp.json())
     .then(data => renderHouseMembers(data))
+    
 
     
 })
 
 document.getElementById('Hufflepuff').addEventListener('click', () => {
+    let housePlaceholder = document.getElementById('houseplaceholder')
+    housePlaceholder.textContent = "Hufflepuff"
+
     fetch(`http://hp-api.herokuapp.com/api/characters/house/hufflepuff`) 
     .then(resp => resp.json())
     .then(data => renderHouseMembers(data))
@@ -26,6 +34,9 @@ document.getElementById('Hufflepuff').addEventListener('click', () => {
 })
 
 document.getElementById('Ravenclaw').addEventListener('click', () => {
+    let housePlaceholder = document.getElementById('houseplaceholder')
+    housePlaceholder.textContent = "Ravenclaw"
+
     fetch(`http://hp-api.herokuapp.com/api/characters/house/ravenclaw`) 
     .then(resp => resp.json())
     .then(data => renderHouseMembers(data))
@@ -34,6 +45,9 @@ document.getElementById('Ravenclaw').addEventListener('click', () => {
 })
 
 document.getElementById('Slytherin').addEventListener('click', () => {
+    let housePlaceholder = document.getElementById('houseplaceholder')
+    housePlaceholder.textContent = "Slytherin"
+
     fetch(`http://hp-api.herokuapp.com/api/characters/house/Slytherin`) 
     .then(resp => resp.json())
     .then(data => renderHouseMembers(data))
@@ -57,6 +71,9 @@ function renderHouseMembers(characterArray) {
         })
         characterList.appendChild(characterLi)
     })
+
+    
+    
 }
 
 
@@ -94,7 +111,9 @@ function renderCharacterInfo(character) {
     memberPatronus.textContent = "Patronus:   " + character.patronus;
     memberActor.textContent = "Actor:   " + character.actor;
     memberAlive.textContent = "Alive:   " + character.alive;
+
 }
+
 
 
 document.addEventListener("DOMContentLoaded", init)
