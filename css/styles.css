@@ -12,7 +12,7 @@ div#content h2{font-family: 'Harry Potter', sans-serif; text-align: center; colo
 div#content p{text-color:#740001}
 div#content ul li:hover{background-color:#EEBA30; color:#740001}
 div#content ul li{color:#EEBA30}
-div#content img{border-radius: 50%; border: 15px solid #EEBA30;
+div#content img{border-radius: 50%; border: 16px solid #EEBA30;
   
     padding: 5px;
     width: 300px;
@@ -38,4 +38,6 @@ div#content{float:left;width:66%}
 div#navigation{float:right;width:33%}
 div#extra{float:right;clear:right;width:33%}
 div#footer{clear:both;width:100%;}
+
+
 
